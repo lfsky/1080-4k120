@@ -98,14 +98,10 @@ add_library(chimera STATIC
     src/chimera/fix/blue_32bit_color_fix.cpp
     src/chimera/fix/bullshit_server_data.cpp
     src/chimera/fix/bullshit_server_data.S
-    src/chimera/fix/camera_shake_fix.cpp
-    src/chimera/fix/camera_shake_fix.S
     src/chimera/fix/checkpoint_fix.cpp
     src/chimera/fix/checkpoint_fix.S
     src/chimera/fix/chicago_fix.cpp
     src/chimera/fix/chicago_fix.S
-    src/chimera/fix/contrail_fix.cpp
-    src/chimera/fix/contrail_fix.S
     src/chimera/fix/custom_map_lobby_fix.cpp
     src/chimera/fix/death_reset_time.cpp
     src/chimera/fix/z_fighting.cpp
@@ -131,14 +127,6 @@ add_library(chimera STATIC
     src/chimera/fix/hud_meters.S
     src/chimera/fix/invalid_command_crash.cpp
     src/chimera/fix/invalid_command_crash.S
-    src/chimera/fix/interpolate/antenna.cpp
-    src/chimera/fix/interpolate/camera.cpp
-    src/chimera/fix/interpolate/flag.cpp
-    src/chimera/fix/interpolate/fp.cpp
-    src/chimera/fix/interpolate/interpolate.cpp
-    src/chimera/fix/interpolate/light.cpp
-    src/chimera/fix/interpolate/object.cpp
-    src/chimera/fix/interpolate/particle.cpp
     src/chimera/fix/jason_jones_hacks.cpp
     src/chimera/fix/leak_descriptors.cpp
     src/chimera/fix/model_detail.cpp
