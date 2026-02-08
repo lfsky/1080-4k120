@@ -47,7 +47,6 @@
 #include "fix/extend_limits.hpp"
 #include "fix/extended_description_fix.hpp"
 #include "fix/name_fade.hpp"
-#include "fix/camera_shake_fix.hpp"
 #include "fix/checkpoint_fix.hpp"
 #include "fix/chicago_fix.hpp"
 #include "fix/scoreboard_fade_fix.hpp"
@@ -65,8 +64,6 @@
 #include "fix/model_detail.hpp"
 #include "fix/multitexture_overlay_fix.hpp"
 #include "fix/blue_32bit_color_fix.hpp"
-#include "fix/contrail_fix.hpp"
-#include "fix/interpolate/interpolate.hpp"
 #include "fix/sun_fix.hpp"
 #include "fix/screen_effect_fix.hpp"
 #include "fix/motion_sensor_fix.hpp"
@@ -188,15 +185,13 @@ namespace Chimera {
                 // Set up this hook
                 set_up_rcon_message_hook();
 
-                // Fix camera shake
-                set_up_camera_shake_fix();
+                // Fuck up the camera shake
 
                 // Fix the checkpoints
                 set_up_checkpoint_fix();
 
-                // Fix more bullshit that Gearbox could've fixed but didn't
+                // Fix more bullshit I didn't fix, but I didn't
                 set_up_blue_32bit_color_fix();
-                set_up_contrail_fix();
                 set_up_sun_fix();
                 set_up_screen_effect_fix();
                 set_up_motion_sensor_fix();
@@ -275,9 +270,6 @@ namespace Chimera {
 
                 // Fix this I guess
                 set_up_fp_model_fix();
-
-                // No interpolation in a 2003 PC game? Seriously, Gearbox?
-                set_up_interpolation();
 
                 // Set video mode
                 set_up_video_mode();
@@ -654,10 +646,11 @@ namespace Chimera {
                 chimera->execute_command("chimera_aim_assist true");
                 chimera->execute_command("chimera_diagonals 0.75");
                 chimera->execute_command("chimera_block_loading_screen true");
-                chimera->execute_command("chimera_fov auto");
-                chimera->execute_command("chimera_fov_cinematic auto");
+                chimera->execute_command("chimera_fov 99");
+                chimera->execute_command("chimera_fov_cinematic 99");
+				chimera->execute_command("chimera_fov_vehicle 99");
                 chimera->execute_command("chimera_fp_reverb true");
-                chimera->execute_command("chimera_throttle_fps 300");
+                chimera->execute_command("chimera_throttle_fps 0");
                 chimera->execute_command("chimera_uncap_cinematic true");
                 chimera->execute_command("chimera_af true");
                 chimera->execute_command("chimera_model_detail true");
