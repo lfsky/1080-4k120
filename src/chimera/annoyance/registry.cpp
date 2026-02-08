@@ -14,6 +14,5 @@ namespace Chimera {
         write_code_s(get_chimera().get_signature("registry_check_2_sig").data(), registry_check_2_code);
         write_code_s(get_chimera().get_signature("registry_check_3_sig").data(), registry_check_2_code);
         write_code_s(get_chimera().get_signature("registry_check_4_sig").data(), registry_check_2_code);
-        write_code_s(get_chimera().get_signature("gamma_sig").data(), registry_check_2_code);
     }
 }
