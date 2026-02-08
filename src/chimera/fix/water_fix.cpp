@@ -37,7 +37,7 @@ namespace Chimera {
         if(d3d9_device_caps->PixelShaderVersion >= 0xffff0101 && start_register == 1) {
 
             // Why would you do that. Why would you do that.
-            float adjusted_lod_bias = log2f((get_resolution().height + 1375) / 2015.f) * log2f((get_resolution().width + 1535) / 2015.f) - (*reinterpret_cast<float *>(shader + 0xE0));
+            float adjusted_lod_bias = log2f((get_resolution().width + 1375) / 2015.f) * log2f((get_resolution().height + 1535) / 2015.f) - (*reinterpret_cast<float *>(shader + 0xE0));
 
             // Bump map is on sampler 0.
             DWORD *mip_lod_bias = reinterpret_cast<DWORD *>(&adjusted_lod_bias);
