@@ -88,25 +88,18 @@ namespace Chimera {
         interpolate_fp_clear();
     }
 
-    void set_up_interpolation() noexcept {
-        static auto *fp_interp_ptr = get_chimera().get_signature("fp_interp_sig").data();
-        static Hook fp_interp_hook;
-        first_person_camera_tick_rate = *reinterpret_cast<float **>(get_chimera().get_signature("fp_cam_tick_rate_sig").data() + 2);
-
-        add_tick_event(on_tick);
-        add_preframe_event(on_preframe);
-        add_frame_event(on_frame);
-        add_precamera_event(interpolate_camera_before);
-        add_camera_event(interpolate_camera_after);
-        write_jmp_call(fp_interp_ptr, fp_interp_hook, reinterpret_cast<const void *>(interpolate_fp_before), reinterpret_cast<const void *>(interpolate_fp_after));
-
-        // Block built-in fp camera interpolation. Let Chimera do it instead.
-        overwrite(get_chimera().get_signature("camera_interpolation_sig").data() + 0xF, static_cast<unsigned char>(0xEB));
-
-        //Clear interpolation buffers on major game state changes to prevent funny things from happening
-        add_revert_event(clear_buffers);
-        interpolation_enabled = true;
+    void enable_interpolation() noexcept {
+        get_chimera().get_signature("fp_interp_sig").rollback();
+        get_chimera().get_signature("camera_interpolation_sig").rollback();
+        remove_tick_event(on_tick);
+        remove_preframe_event(on_preframe);
+        remove_frame_event(on_frame);
+        remove_precamera_event(interpolate_camera_before);
+        remove_camera_event(interpolate_camera_after);
+        remove_revert_event(clear_buffers);
+        interpolation_enabled = false;
     }
+}
 
     void disable_interpolation() noexcept {
         get_chimera().get_signature("fp_interp_sig").rollback();
