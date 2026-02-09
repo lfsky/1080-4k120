@@ -45,5 +45,4 @@ _adjust_water_render_target_mip_asm:
 
     set_mip_levels:
     mov dword ptr [esp + 0x34], 0x4
-    mov dword ptr [_render_target_create_loop_counter], 0
     ret
