@@ -13,12 +13,14 @@ A modified version of chimera which restores a few features how they were intend
 	• Super renderer
 	• Splitscreen fov
 
-The purpose of this project is a version tailored for unique Campaign scenarios, such as h_4x to 
-further enhance quality unrestrained off preference. Providing freedom of usage in those cases.
+Purpose of this project is a unique edition tailored for Campaign or Multiplayer scenarios, such as 
+
+upcoming h_4x to further enhance quality unrestrained off preference and leverage their capacity.
 
 Recommended 7900 XTX or RTX 5080 and higher for fluid picture and seamless sound quality.
 
 HIGH RESOLUTION HALO with zero 1% or 0.1% low dips locked 30 no variance using RTSS.
+
 Lock using NVIDIA ULTRA ReflexLowLatencyBoost requires ini profile edit in setup.
 
 NOTE GAMMA LOCK AFFECTS THE OS AND REQUIRES RESTART TO RESET DEFAULT
@@ -42,6 +44,6 @@ Overwrite all files, keep a copy of your strings.dll in case needing to revert.
 
 Developed Exclusively for HALO NV2A
 
-v. 2076
+v. 2086
 
 lfsky
